@@ -7,10 +7,10 @@ var express = require('express');  	// provides access to express api via object
 
   // this part is for Heroku
 	app.use(function (req, res, next) {
-		if (req.headers['x-forwarded-proto'] === 'http') {
-			next();
-		} else {
+		if (req.headers['x-forwarded-proto'] === 'https') {
 			res.redirect('http://' + req.hostname + req.url);
+		} else {
+			next();
 		}
 	});
 
