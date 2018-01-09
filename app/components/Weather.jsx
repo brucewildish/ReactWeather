@@ -15,7 +15,11 @@ var Weather = React.createClass({
 
     this.setState({
       isLoading: true,
+<<<<<<< HEAD
       errorMessage: 'Location Not found'
+=======
+      errorMessage: undefined
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
     });
 
     openWeatherMap.getTemp(location).then(function (temp) {

@@ -25049,7 +25049,11 @@
 
 	    this.setState({
 	      isLoading: true,
+<<<<<<< HEAD
 	      errorMessage: 'Location Not found'
+=======
+	      errorMessage: undefined
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
 	    });
 
 	    openWeatherMap.getTemp(location).then(function (temp) {
@@ -25087,7 +25091,11 @@
 
 	    function renderError() {
 	      if (typeof errorMessage === 'string') {
+<<<<<<< HEAD
 	        return React.createElement(ErrorModal, { message: errorMessage });
+=======
+	        return React.createElement(ErrorModal, null);
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
 	      }
 	    }
 
@@ -25185,6 +25193,7 @@
 	var ErrorModal = React.createClass({
 	  displayName: 'ErrorModal',
 
+<<<<<<< HEAD
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      title: 'Error'
@@ -25194,28 +25203,41 @@
 	    title: React.PropTypes.string,
 	    message: React.PropTypes.string.isRequired
 	  },
+=======
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
 	  componentDidMount: function componentDidMount() {
 	    var modal = new Foundation.Reveal($('#error-modal'));
 	    modal.open();
 	  },
 	  render: function render() {
+<<<<<<< HEAD
 	    var _props = this.props,
 	        title = _props.title,
 	        message = _props.message;
 
 
+=======
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
 	    return React.createElement(
 	      'div',
 	      { id: 'error-modal', className: 'reveal tiny text-center', 'data-reveal': '' },
 	      React.createElement(
 	        'h4',
 	        null,
+<<<<<<< HEAD
 	        title
+=======
+	        'Some Title'
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
 	      ),
 	      React.createElement(
 	        'p',
 	        null,
+<<<<<<< HEAD
 	        message
+=======
+	        'Our Error message!'
+>>>>>>> 76f077cf5b149e80e7c049cbea668a35f8378641
 	      ),
 	      React.createElement(
 	        'p',
