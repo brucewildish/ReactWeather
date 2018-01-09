@@ -7,10 +7,10 @@ var express = require('express');  	// provides access to express api via object
 
   // this part is for Heroku
 	app.use(function (req, res, next) {
-		if (req.headers['x-forwarded-proto'] === 'http') {
-			next();
+		if (req.headers['x-forwarded-proto'] === 'https') {
+			res.redirect('http://' + req.hostname + req.url);
 		} else {
-			res.redirect('http//' + req.hostname + req.url);
+			next();
 		}
 	});
 
@@ -20,3 +20,16 @@ var express = require('express');  	// provides access to express api via object
   app.listen (PORT, function() {
 		console.log('Express server is up on port ' + PORT);
 });
+
+// // Express is a web application framework for Node.js
+// var express = require('express');  	// provides access to express api via object
+//
+//   // Create our app
+// 	var app = express();			// call express library as a function
+//
+//   app.use(express.static('public'));  	// use folder "public"
+//
+//   // start server takes port and function to call once server is up
+//   app.listen (3000, function() {
+// 		console.log('Express server is up on port 3000')
+// });
